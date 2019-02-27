@@ -269,7 +269,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 ] instance=ExtResource( 5 )]
 
 position = Vector2( 500, 500 )
-_sections_unfolded = [ "Material", "Pause", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility" ]
 
 [node name="Spawns" type="Node" parent="." index="2"]
 
@@ -351,9 +351,7 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="Enemies" type="Node" parent="." index="3"]
-
-[node name="Game_Over" type="Panel" parent="." index="4"]
+[node name="Game_Over" type="Panel" parent="." index="3"]
 
 visible = false
 anchor_left = 0.0
@@ -484,7 +482,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 root_node = NodePath("..")
 autoplay = ""

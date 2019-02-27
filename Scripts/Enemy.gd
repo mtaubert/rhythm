@@ -6,7 +6,10 @@ var circle = preload("res://Assets/Shapes/circle.png")
 var hexagon = preload("res://Assets/Shapes/hexagon.png")
 
 var shapes = [square, triangle, circle, hexagon]
+var colors = [Color("ff0000"), Color("00ff00"), Color("0000ff"), Color("d2ff00")]
+
 var currentShape
+var currentColor
 var speed = 4
 var dead = false
 var despawning = false
@@ -14,11 +17,12 @@ var playerPos
 
 func _ready():
 	playerPos = get_tree().get_nodes_in_group("Player_Node")[0].position
+	randomize()
 	set_shape()
+	set_color()
 	$AnimationPlayer.play("spawn")
 
 func set_shape():
-	randomize()
 	var rand = randi() % 4
 	self.texture = shapes[rand]
 	match rand:
@@ -30,6 +34,19 @@ func set_shape():
 			currentShape = "circle"
 		3:
 			currentShape = "hexagon"
+
+func set_color():
+	var rand = randi() % 4
+	self.modulate = colors[rand]
+	match rand:
+		0:
+			currentShape = "red"
+		1:
+			currentShape = "green"
+		2:
+			currentShape = "blue"
+		3:
+			currentShape = "yellow"
 
 func _process(delta):
 	if not dead:

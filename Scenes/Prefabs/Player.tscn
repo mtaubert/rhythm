@@ -70,7 +70,7 @@ tracks/0/keys = {
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Material", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
