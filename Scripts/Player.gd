@@ -15,19 +15,19 @@ func _ready():
 	currentShape = "square"
 
 func _process(delta):
-	if(Input.is_key_pressed(KEY_LEFT) and currentShape != "square"):
+	if(Input.is_action_pressed("ui_left") and currentShape != "square"):
 		self.texture = square
 		currentShape = "square"
 		$AnimationPlayer.play("change_shape")
-	elif(Input.is_key_pressed(KEY_UP) and currentShape != "triangle"):
+	elif(Input.is_action_pressed("ui_up") and currentShape != "triangle"):
 		self.texture = triangle
 		currentShape = "triangle"
 		$AnimationPlayer.play("change_shape")
-	elif(Input.is_key_pressed(KEY_RIGHT) and currentShape != "circle"):
+	elif(Input.is_action_pressed("ui_right") and currentShape != "circle"):
 		self.texture = circle
 		currentShape = "circle"
 		$AnimationPlayer.play("change_shape")
-	elif(Input.is_key_pressed(KEY_DOWN) and currentShape != "hexagon"):
+	elif(Input.is_action_pressed("ui_down") and currentShape != "hexagon"):
 		self.texture = hexagon
 		currentShape = "hexagon"
 		$AnimationPlayer.play("change_shape")

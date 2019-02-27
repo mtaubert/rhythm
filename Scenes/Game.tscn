@@ -111,7 +111,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
 
-size = 38
+size = 35
 use_mipmaps = true
 use_filter = false
 font_data = ExtResource( 4 )
@@ -177,7 +177,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -355,7 +355,6 @@ autostart = false
 
 [node name="Game_Over" type="Panel" parent="." index="4"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -414,7 +413,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 500.0
-margin_bottom = 197.0
+margin_bottom = 146.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -433,13 +432,39 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Rect", "Size Flags", "custom_colors", "custom_fonts" ]
 
-[node name="Label" type="Label" parent="Game_Over/Game_Over_Panel/VBoxContainer" index="1"]
+[node name="Restart" type="Label" parent="Game_Over/Game_Over_Panel/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 201.0
+margin_top = 150.0
+margin_right = 500.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press R to start again!"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="Menu" type="Label" parent="Game_Over/Game_Over_Panel/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 227.0
 margin_right = 500.0
 margin_bottom = 300.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -450,7 +475,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press R to start again!"
+text = "Press Esc to go to menu!"
 align = 1
 valign = 1
 clip_text = true

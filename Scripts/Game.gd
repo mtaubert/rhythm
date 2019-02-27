@@ -11,13 +11,15 @@ func _ready():
 	$Background/Score/Label.text = "Score: 0"
 
 func _process(delta):
-	if(Input.is_key_pressed(KEY_R) and gameOver and not restarting):
+	if(Input.is_action_pressed("restart") and gameOver and not restarting):
 		restarting = true
 		gameOver = false
 		$Background/Score/Label.text = "Score: 0"
 		$AnimationPlayer.play("restart")
 		$Player.respawn()
 		$Spawns.timer.start()
+	if(Input.is_action_pressed("exit_to_menu")):
+		SceneManager.load_scene("Menu")
 
 func game_over():
 	gameOver = true
