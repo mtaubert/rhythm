@@ -69,7 +69,6 @@ func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 		emit_signal("point")
 	else:
 		game_over()
-		hitEnemy.die()
 
 func game_over():
 	emit_signal("died")
