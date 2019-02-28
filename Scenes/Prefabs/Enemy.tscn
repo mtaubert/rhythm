@@ -58,7 +58,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1e-005, 1e-005 ), Vector2( 0.4, 0.4 ), Vector2( 0.2, 0.2 ) ]
 }
 
-[node name="Enemy" type="Sprite" index="0" groups=[
+[node name="Enemy" type="Sprite" groups=[
 "Enemies",
 ]]
 

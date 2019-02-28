@@ -19,7 +19,7 @@ func _process(delta):
 		$Player.respawn()
 		$Spawns.timer.start()
 	if(Input.is_action_pressed("exit_to_menu")):
-		SceneManager.load_scene("Menu")
+		GameManager.load_scene("Menu")
 
 func game_over():
 	gameOver = true

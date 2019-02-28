@@ -9,7 +9,7 @@ var shapes = [square, triangle, circle, hexagon]
 var colors = [Color("ff0000"), Color("00ff00"), Color("0000ff"), Color("d2ff00")]
 
 var currentShape
-var currentColor
+var currentColor = "white"
 var speed = 4
 var dead = false
 var despawning = false
@@ -19,7 +19,8 @@ func _ready():
 	playerPos = get_tree().get_nodes_in_group("Player_Node")[0].position
 	randomize()
 	set_shape()
-	set_color()
+	if GameManager.color_mode:
+		set_color()
 	$AnimationPlayer.play("spawn")
 
 func set_shape():
@@ -40,13 +41,13 @@ func set_color():
 	self.modulate = colors[rand]
 	match rand:
 		0:
-			currentShape = "red"
+			currentColor = "red"
 		1:
-			currentShape = "green"
+			currentColor = "green"
 		2:
-			currentShape = "blue"
+			currentColor = "blue"
 		3:
-			currentShape = "yellow"
+			currentColor = "yellow"
 
 func _process(delta):
 	if not dead:

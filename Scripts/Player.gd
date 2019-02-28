@@ -11,16 +11,19 @@ var blue = Color("0000ff")
 var yellow = Color("d2ff00")
 
 var currentShape
-var currentColor
+var currentColor = "white"
 
 signal died()
 signal point()
 
 func _ready():
 	self.texture = square
-	self.modulate = red
 	currentShape = "square"
-	currentColor = "red"
+	
+	if GameManager.color_mode:
+		self.modulate = red
+		currentColor = "red"
+
 
 func _process(delta):
 	if(Input.is_action_pressed("ui_left") and currentShape != "square"):
@@ -39,22 +42,24 @@ func _process(delta):
 		self.texture = hexagon
 		currentShape = "hexagon"
 		$AnimationPlayer.play("change_shape")
-	elif(Input.is_action_pressed("color_a") and currentColor != "red"):
-		self.modulate = red
-		currentColor = "red"
-		$AnimationPlayer.play("change_shape")
-	elif(Input.is_action_pressed("color_w") and currentColor != "green"):
-		self.modulate = green
-		currentColor = "green"
-		$AnimationPlayer.play("change_shape")
-	elif(Input.is_action_pressed("color_d") and currentColor != "blue"):
-		self.modulate = blue
-		currentColor = "blue"
-		$AnimationPlayer.play("change_shape")
-	elif(Input.is_action_pressed("color_s") and currentColor != "yellow"):
-		self.modulate = yellow
-		currentColor = "yellow"
-		$AnimationPlayer.play("change_shape")
+	
+	if GameManager.color_mode:
+		if(Input.is_action_pressed("color_a") and currentColor != "red"):
+			self.modulate = red
+			currentColor = "red"
+			$AnimationPlayer.play("change_shape")
+		elif(Input.is_action_pressed("color_w") and currentColor != "green"):
+			self.modulate = green
+			currentColor = "green"
+			$AnimationPlayer.play("change_shape")
+		elif(Input.is_action_pressed("color_d") and currentColor != "blue"):
+			self.modulate = blue
+			currentColor = "blue"
+			$AnimationPlayer.play("change_shape")
+		elif(Input.is_action_pressed("color_s") and currentColor != "yellow"):
+			self.modulate = yellow
+			currentColor = "yellow"
+			$AnimationPlayer.play("change_shape")
 
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 	var hitEnemy = area.get_parent()

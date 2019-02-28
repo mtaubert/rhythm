@@ -1,22 +1,21 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$Small_Panel/Options/Color.pressed = GameManager.color_mode
 
 func play():
-	SceneManager.load_scene("Game")
+	GameManager.load_scene("Game")
 
 func show_options():
-	pass
+	$Small_Panel/Options.show()
+	$Small_Panel/Buttons.hide()
 
 func hide_options():
-	pass
+	$Small_Panel/Options.hide()
+	$Small_Panel/Buttons.show()
 
 func quit():
-	SceneManager.quit_game()
+	GameManager.quit_game()
+
+func color_mode(button_pressed):
+	GameManager.color_mode = button_pressed
