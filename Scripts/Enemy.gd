@@ -60,15 +60,11 @@ func _process(delta):
 func moveToPlayer():
 	var direction = Vector2(0,0)
 	
-	if self.global_position .x > playerPos.x:
-		direction.x = -speed
-	elif self.global_position .x < playerPos.x:
-		direction.x = speed
+	if self.global_position.x - playerPos.x != 0:
+		direction.x = -((self.global_position.x-playerPos.x)/abs(self.global_position.x-playerPos.x)) * speed
 
-	if self.global_position .y > playerPos.y:
-		direction.y = -speed
-	elif self.global_position .y < playerPos.y:
-		direction.y = speed
+	if self.global_position.y - playerPos.y != 0:
+		direction.y = -((self.global_position.y-playerPos.y)/abs(self.global_position.y-playerPos.y)) * speed
 	
 	self.position += direction
 

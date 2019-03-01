@@ -9,6 +9,11 @@ func _ready():
 	$Player.connect("died", self, "game_over")
 	$Player.connect("point", self, "add_point")
 	$Background/Score/Label.text = "Score: 0"
+	
+	if GameManager.color_mode:
+		$Background/Controls_Colors.show()
+	else:
+		$Background/Controls_Colors.hide()
 
 func _process(delta):
 	if(Input.is_action_pressed("restart") and gameOver and not restarting):
