@@ -22,6 +22,8 @@ GameManager="*res://Scripts/GameManager.gd"
 
 window/size/width=1000
 window/size/height=1000
+window/size/resizable=false
+window/size/borderless=true
 
 [input]
 

@@ -10,13 +10,15 @@ var colors = [Color("ff0000"), Color("00ff00"), Color("0000ff"), Color("d2ff00")
 
 var currentShape
 var currentColor = "white"
-var speed = 4
+var speed = 2
+var direction
 var dead = false
 var despawning = false
 var playerPos
 
 func _ready():
 	playerPos = get_tree().get_nodes_in_group("Player_Node")[0].position
+	direction = Vector2(playerPos-self.global_position)/500
 	randomize()
 	set_shape()
 	if GameManager.color_mode:
@@ -58,15 +60,8 @@ func _process(delta):
 		despawning = true
 
 func moveToPlayer():
-	var direction = Vector2(0,0)
 	
-	if self.global_position.x - playerPos.x != 0:
-		direction.x = -((self.global_position.x-playerPos.x)/abs(self.global_position.x-playerPos.x)) * speed
-
-	if self.global_position.y - playerPos.y != 0:
-		direction.y = -((self.global_position.y-playerPos.y)/abs(self.global_position.y-playerPos.y)) * speed
-	
-	self.position += direction
+	self.position += direction*speed
 
 func die():
 	dead = true

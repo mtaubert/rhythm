@@ -2,7 +2,7 @@ extends Node
 
 var enemy = preload("res://Scenes/Prefabs/enemy.tscn")
 onready var timer = $Timer
-var spawnRate = 0.1
+var spawnRate = 1
 var enemySpeed = 4
 var radius = 500
 var center
