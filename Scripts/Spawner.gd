@@ -2,7 +2,7 @@ extends Node
 
 var enemy = preload("res://Scenes/Prefabs/enemy.tscn")
 onready var timer = $Timer
-var spawnRate = 0.1
+var spawnRate = 2
 var enemySpeed = 4
 var radius = 500
 var center
@@ -26,11 +26,11 @@ func spawn_enemy_old():
 	enemySpeed += 0.1
 	timer.set_wait_time(spawnRate)
 
-var angles = [0, 79, 180, 270, 45, 135, 225, 315]
+var angles = [0, 90, 180, 270, 45, 135, 225, 315]
 func spawn_enemy():
 	var randAngle
 	if GameManager.difficulty == 0:
-		randAngle = randi() % 2
+		randAngle = randi() % 4
 		randAngle = angles[randAngle]
 	elif GameManager.difficulty == 1:
 		randAngle = randi() % 8
@@ -40,7 +40,7 @@ func spawn_enemy():
 	
 	print(randAngle)
 	
-	var offset = Vector2(sin(randAngle), cos(randAngle)) * radius
+	var offset = Vector2(sin(deg2rad(randAngle)), cos(deg2rad(randAngle))) * radius
 	var spawn = center + offset
 	var enemyInstance = enemy.instance()
 	enemyInstance.set_name("enemy")

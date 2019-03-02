@@ -6,6 +6,7 @@ func _ready():
 	$Small_Panel/Options/Difficulty/HSlider.add_item("Easy")
 	$Small_Panel/Options/Difficulty/HSlider.add_item("Medium")
 	$Small_Panel/Options/Difficulty/HSlider.add_item("Hard")
+	$Small_Panel/Options/Difficulty/HSlider.select(GameManager.difficulty)
 
 
 func play():
