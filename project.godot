@@ -23,7 +23,9 @@ GameManager="*res://Scripts/GameManager.gd"
 window/size/width=1000
 window/size/height=1000
 window/size/resizable=false
-window/size/borderless=true
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+window/stretch/shrink="1"
 
 [input]
 

@@ -53,7 +53,8 @@ func set_color():
 
 func _process(delta):
 	if not dead:
-		moveToPlayer()
+		#moveToPlayer()
+		pass
 	elif not despawning:
 		$AnimationPlayer.play("death")
 		dead = true
