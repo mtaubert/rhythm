@@ -26,14 +26,6 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=5]
-
-size = 40
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 5 )
-_sections_unfolded = [ "Font", "Settings" ]
-
 [sub_resource type="DynamicFont" id=3]
 
 size = 40
@@ -43,6 +35,14 @@ font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
 
 size = 50
 use_mipmaps = false
@@ -312,7 +312,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.7
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.286275, 0.133333, 0.0117647, 1 )
 toggle_mode = false
 action_mode = 0
@@ -342,7 +342,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.289063, 0.136239, 0.0135498, 1 )
 custom_colors/font_color_hover = Color( 0.289063, 0.136239, 0.0135498, 1 )
 custom_colors/font_color_pressed = Color( 0.289063, 0.136239, 0.0135498, 1 )
@@ -396,7 +396,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.289063, 0.136239, 0.0135498, 1 )
 text = "Back"
 align = 1
@@ -466,7 +466,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.289063, 0.136239, 0.0135498, 1 )
 text = "Play"
 align = 1
@@ -517,7 +517,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.289063, 0.136239, 0.0135498, 1 )
 text = "Options"
 align = 1
@@ -568,7 +568,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.289063, 0.136239, 0.0135498, 1 )
 text = "Quit"
 align = 1

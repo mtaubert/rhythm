@@ -47,6 +47,11 @@ func spawn_enemy():
 	enemyInstance.speed = enemySpeed
 	enemyInstance.position = spawn
 	$Enemies.add_child(enemyInstance)
+	
+	if spawnRate > 0.5:
+		spawnRate -= 0.1
+	enemySpeed += 0.1
+	timer.set_wait_time(spawnRate)
 
 func reset():
 	spawnRate = 2
